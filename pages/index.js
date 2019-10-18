@@ -1,3 +1,8 @@
 import Home from "../src/components/Home/Home";
+import { UserProvider } from "../src/context/UserContext";
 
-export default () => <Home />;
+export default () => (
+    <UserProvider>
+        <Home />
+    </UserProvider>
+);

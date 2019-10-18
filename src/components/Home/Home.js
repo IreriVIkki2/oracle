@@ -1,27 +1,22 @@
-import { useEffect, useState } from "react";
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react";
+import Link from "next/link";
 
-const Home = () => {
-    const [Value, setValue] = useState("");
-
-    const submit = () => {
-        console.log("TCL: Home -> Value", Value);
-    };
-
+const Home = props => {
+    const { isAuthenticated } = useContext(UserContext);
+    console.log("TCL: user", isAuthenticated);
     return (
         <div>
             <h1>Home page</h1>
-            <small>testing inputs</small>
-            <br />
-            <br />
-            <hr />
-            <input
-                type="text"
-                onChange={e => setValue(e.target.value)}
-                value={Value}
-            />
-            <br />
-            <br />
-            <button onClick={submit}>Submit</button>
+            <Link href="/auth/login">
+                <a>Login</a>
+            </Link>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+                temporibus voluptate nulla molestias officia voluptatem
+                excepturi odio consequatur dolor laborum, cumque aperiam ducimus
+                doloribus illo quas a veritatis corporis eum!
+            </p>
         </div>
     );
 };
