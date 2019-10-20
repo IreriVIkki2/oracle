@@ -8,10 +8,6 @@ const Login = () => {
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
     const router = useRouter();
-
-    console.log("TCL: Login -> userLoaded", userLoaded);
-    console.log("TCL: Login -> isAuthenticated", isAuthenticated);
-
     useEffect(() => {
         if (userLoaded && isAuthenticated) router.replace("/");
         return () => {};
