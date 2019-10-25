@@ -1,29 +1,20 @@
 import { useContext } from "react";
-import EditableComponent from "../../../hoc/EditableComponent";
-import { HomeContext } from "../../../context/data/HomeContext";
 import { UserContext } from "../../../context/UserContext";
+import EditableComponent from "../../../hoc/EditableComponent";
+import css from "./Header.module.css";
 
-const Header = props => {
-    const landingBackground = "";
-    const { home } = useContext(HomeContext);
+const Header = ({ tagLine, backgroundImage }) => {
     const { toggleEditing } = useContext(UserContext);
-
-    if (!home) {
-        return <h1>Loading</h1>;
-    }
-
-    let card = !toggleEditing
-        ? "m-2 border border-info rounded shadow p-2"
-        : "p-2";
-
-    const { tagLine, backgroundImage } = home.header;
-    console.log(home.header);
+    let card = !toggleEditing ? "h-100" : "";
 
     return (
-        <EditableComponent elements={home.header} section="Header">
-            <section>
+        <EditableComponent
+            elements={{ tagLine, backgroundImage }}
+            section="Header"
+        >
+            <section className={card}>
                 <div
-                    className={card}
+                    className={css.Header}
                     style={{
                         backgroundImage: `url("${backgroundImage.value}")`,
                     }}

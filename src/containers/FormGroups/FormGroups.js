@@ -1,5 +1,6 @@
 import TextForm from "./TextForm/TextForm";
 import ImageForm from "./ImageForm/ImageForm";
+import TextAreaForm from "./TextAreaForm/TextAreaForm";
 
 const FormGroups = props => {
     let formGroup = null;
@@ -10,6 +11,9 @@ const FormGroups = props => {
 
         case "file":
             return <ImageForm {...props} />;
+
+        case "textarea":
+            return <TextAreaForm {...props} />;
 
         default:
             break;

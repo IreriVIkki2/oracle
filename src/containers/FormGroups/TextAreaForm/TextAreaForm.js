@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { updateElement } from "../../../../utils/firebaseMethods/updateElements";
 import { HomeContext } from "../../../context/data/HomeContext";
 
-const TextForm = ({ doc, collection, label, value, path }) => {
+const TextAreaForm = ({ doc, collection, label, value, path }) => {
     const [newValue, setNewValue] = useState(value);
     const [changes, setChanges] = useState(0);
     const [saving, setSaving] = useState(false);
@@ -56,7 +56,7 @@ const TextForm = ({ doc, collection, label, value, path }) => {
     return (
         <div className="form-group">
             <label htmlFor={path}>{label}</label>
-            <input
+            <textarea
                 type={path}
                 className="form-control"
                 id={path}
@@ -72,4 +72,4 @@ const TextForm = ({ doc, collection, label, value, path }) => {
     );
 };
 
-export default TextForm;
+export default TextAreaForm;

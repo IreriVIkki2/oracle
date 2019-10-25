@@ -9,6 +9,14 @@ const EditableComponent = ({ children, elements, section }) => {
         return children;
     }
 
+    if (!section || !elements) {
+        return (
+            <div className="alert alert-warning">
+                <p>section and elements are required</p>
+            </div>
+        );
+    }
+
     let form = (
         <form action="">
             {Object.keys(elements).map(key => {

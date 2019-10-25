@@ -65,7 +65,7 @@ const ImageForm = ({ doc, collection, label, value, path }) => {
             <div className="w-25 mr-2">
                 <img
                     className="img-fluid"
-                    src={saving ? "/static/uploading.gif" : newImage}
+                    src={saving ? "/public/uploading.gif" : newImage}
                     alt=""
                 />
             </div>
