@@ -8,9 +8,9 @@ const Login = () => {
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
     const router = useRouter();
+
     useEffect(() => {
         if (userLoaded && isAuthenticated) router.replace("/");
-        return () => {};
     }, [isAuthenticated, userLoaded]);
 
     const handleLogin = () => {

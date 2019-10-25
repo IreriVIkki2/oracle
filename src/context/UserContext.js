@@ -3,16 +3,21 @@ import { auth } from "../../utils/firebase";
 
 export const UserContext = createContext();
 
-export const UserProvider = props => {
+export const UserProvider = ({ children }) => {
     const [user, setUser] = useState();
-    const [isAuthenticated, setIsAuthenticated] = useState(null);
-    const [userLoaded, setUserLoaded] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState();
+    const [userLoaded, setUserLoaded] = useState();
+    const [toggleEditing, setToggleEditing] = useState(true);
 
     auth.onAuthStateChanged(user => {
         if (user) {
             setUser(user);
             setIsAuthenticated(!!user);
             setUserLoaded(true);
+        } else {
+            setUser(null);
+            setUserLoaded(true);
+            setIsAuthenticated(false);
         }
     });
 
@@ -22,9 +27,11 @@ export const UserProvider = props => {
                 user,
                 isAuthenticated,
                 userLoaded,
+                toggleEditing,
+                setToggleEditing,
             }}
         >
-            {props.children}
+            {children}
         </UserContext.Provider>
     );
 };
