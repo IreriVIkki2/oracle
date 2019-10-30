@@ -1,11 +1,11 @@
-import Home from "../src/components/Home/Home";
+import { HomeProvider } from "../src/Context/HomeContext";
 import Layout from "../src/components/Layout/Layout";
-import { HomeProvider } from "../src/context/data/HomeContext";
+import HomePage from "../src/components/Pages/Homepage/HomePage";
 
-const Index = props => (
+const Index = () => (
     <HomeProvider>
         <Layout>
-            <Home {...props} />
+            <HomePage />
         </Layout>
     </HomeProvider>
 );

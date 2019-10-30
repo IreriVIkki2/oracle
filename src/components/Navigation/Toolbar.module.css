@@ -1,0 +1,83 @@
+.Toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 0.25rem 1rem;
+    /* positioning */
+    position: fixed;
+    height: 65px;
+    width: 100%;
+    background-color: #000000;
+    /* top: 0%; */
+}
+
+.Logo {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.Nav {
+    display: none;
+    flex-grow: 1;
+}
+
+.NavItems {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.NavItems li {
+    height: 100%;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+
+.HamburgerMenu {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.HamburgerMenu > div {
+    background-color: #b28d3d;
+    height: 2px;
+}
+
+.HamburgerMenu > div:nth-child(1) {
+    width: 100%;
+}
+
+.HamburgerMenu > div:nth-child(2) {
+    width: 80%;
+}
+
+.HamburgerMenu > div:nth-child(3) {
+    width: 60%;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (min-width: 576px) {
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (min-width: 768px) {
+    .Nav {
+        display: block;
+    }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (min-width: 992px) {
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (min-width: 1200px) {
+}

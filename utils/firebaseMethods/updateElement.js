@@ -1,6 +1,6 @@
 import { firestore } from "../firebase";
 
-export const updateElement = async (collection, doc, update) => {
+export default async (collection, doc, update) => {
     // Initialize document
     return new Promise((resolve, reject) => {
         firestore

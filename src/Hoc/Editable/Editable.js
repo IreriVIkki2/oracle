@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
-import FormGroups from "../containers/FormGroups/FormGroups";
+import { useContext, Fragment } from "react";
+import { UserContext } from "../../Context/UserContext";
+import Forms from "./Forms";
 
-const EditableComponent = ({ children, elements, section }) => {
+const Editable = ({ children, elements, section }) => {
     const { isAuthenticated, toggleEditing } = useContext(UserContext);
 
     if (!isAuthenticated || !toggleEditing) {
@@ -16,25 +16,27 @@ const EditableComponent = ({ children, elements, section }) => {
             </div>
         );
     }
+    console.log("TCL: Editable -> section", section);
+    console.log("TCL: Editable -> elements", elements);
 
     let form = (
         <form action="">
             {Object.keys(elements).map(key => {
                 const element = elements[key];
-                return <FormGroups key={key} {...element} />;
+                return <Forms key={key} {...element} />;
             })}
         </form>
     );
 
     return (
-        <div className="m-2 border border-info rounded shadow">
+        <Fragment>
             {children}
-            <div className="mt-2 p-2 bg-info">
-                <h3>{`Edit ${section} section`}</h3>
+            <div className="p-2 bg-dark">
+                <h3 className="font-weight-lighter">{`Edit ${section} section`}</h3>
                 {form}
             </div>
-        </div>
+        </Fragment>
     );
 };
 
-export default EditableComponent;
+export default Editable;

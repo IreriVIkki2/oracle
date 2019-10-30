@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import { auth } from "../../../utils/firebase";
 import { useRouter } from "next/router";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../../Context/UserContext";
 
 const Login = () => {
     const { isAuthenticated, userLoaded } = useContext(UserContext);
@@ -25,32 +25,35 @@ const Login = () => {
         renderContent = <h1>Loading...</h1>;
     } else if (userLoaded && !isAuthenticated) {
         renderContent = (
-            <div>
-                <h1 className="">Login</h1>
-                <hr />
-                <br />
-                <input
-                    className=""
-                    type="email"
-                    placeholder="email"
-                    onChange={e => setEmail(e.target.value)}
-                    value={Email}
-                />
-                <br />
-                <br />
-                <input
-                    className=""
-                    type="password"
-                    placeholder="password"
-                    onChange={e => setPassword(e.target.value)}
-                    value={Password}
-                />
-                <br />
-                <br />
+            <div className="container">
+                <div className="card mt-5">
+                    <h1 className="card-header">Login</h1>
+                    <div className="card-body d-flex flex-column">
+                        <input
+                            className="my-3 form-control rounded-0"
+                            type="email"
+                            placeholder="email"
+                            onChange={e => setEmail(e.target.value)}
+                            value={Email}
+                        />
+                        <input
+                            className="my-3 form-control rounded-0"
+                            type="password"
+                            placeholder="password"
+                            onChange={e => setPassword(e.target.value)}
+                            value={Password}
+                        />
+                    </div>
 
-                <button className="" onClick={handleLogin}>
-                    Login
-                </button>
+                    <div className="card-footer">
+                        <button
+                            className="btn-sm px-3 btn-info"
+                            onClick={handleLogin}
+                        >
+                            Login
+                        </button>
+                    </div>
+                </div>
             </div>
         );
     }

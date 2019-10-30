@@ -1,5 +1,5 @@
 import { useState, createContext, useEffect } from "react";
-import { getHome } from "../../../utils/firebaseMethods/getElements";
+import { getHome } from "../../utils/firebaseMethods/getElements";
 
 export const HomeContext = createContext();
 
@@ -8,7 +8,6 @@ export const HomeProvider = ({ children }) => {
 
     const updateHomeCollection = async () => {
         setHome(await getHome());
-        console.log("[HOME UPDATED]");
     };
 
     useEffect(() => {
