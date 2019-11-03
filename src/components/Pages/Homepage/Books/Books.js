@@ -15,13 +15,13 @@ const Books = ({ booksCovers, booksTitle, booksWriteUp }) => {
             elements={{ booksTitle, booksWriteUp, ...booksCovers }}
         >
             <section className={css.Books}>
-                <div className={css.Carousel}>
-                    <div className={css.CarouselInner}>
+                <div className={main.Carousel}>
+                    <div className={main.CarouselInner300}>
                         {Object.values(booksCovers).map(cover => {
                             return (
                                 <div
                                     key={cover.path}
-                                    className={css.CarouselItem}
+                                    className={main.CarouselItem100}
                                 >
                                     <div className={css.ImageOutline}>
                                         <div className={css.ImageOutlineImage}>
