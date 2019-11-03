@@ -10,6 +10,7 @@
     width: 100%;
     background-color: #000000;
     /* top: 0%; */
+    z-index: 1000;
 }
 
 .Logo {
@@ -30,10 +31,16 @@
     justify-content: flex-end;
 }
 
-.NavItems li {
+.LinkItem {
     height: 100%;
     margin-right: 2rem;
     cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+
+.LinkItem:active,
+.LinkItem:hover {
+    border-bottom: #b28d3d solid 1px;
 }
 
 .HamburgerMenu {

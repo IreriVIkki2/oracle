@@ -27,5 +27,6 @@ yarn-error.log*
 /.firebase
 /.next
 /.vscode
-/config
+/config/
+config.js
 # /functions

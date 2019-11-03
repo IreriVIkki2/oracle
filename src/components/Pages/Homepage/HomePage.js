@@ -17,8 +17,8 @@ export default () => {
     return (
         <div>
             <Header {...home.header} />
-            <About />
-            <Books />
+            <About {...home.about} />
+            <Books {...home.books} />
             <Involvement />
             <Support />
             <Gallery />

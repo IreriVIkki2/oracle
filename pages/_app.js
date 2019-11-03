@@ -18,7 +18,7 @@ class MyApp extends App {
                         crossOrigin="anonymous"
                     />
                     <link
-                        href="https://fonts.googleapis.com/css?family=La+Belle+Aurore|Raleway:300,400,500&display=swap"
+                        href="https://fonts.googleapis.com/css?family=La+Belle+Aurore|Raleway:300,300i,400,400i,500&display=swap"
                         rel="stylesheet"
                     />
 

@@ -3,7 +3,6 @@ import { HomeContext } from "../../../Context/HomeContext";
 import updateElement from "../../../../utils/firebaseMethods/updateElement";
 
 const TextForm = ({ doc, collection, label, value, path }) => {
-    console.log("TCL: TextForm -> label", label);
     const [newValue, setNewValue] = useState(value);
     const [changes, setChanges] = useState(0);
     const [saving, setSaving] = useState(false);
@@ -57,7 +56,7 @@ const TextForm = ({ doc, collection, label, value, path }) => {
     return (
         <div className="form-group">
             <label className="h5" htmlFor={path}>
-                {label}
+                edit {label}
             </label>
             <input
                 type={path}

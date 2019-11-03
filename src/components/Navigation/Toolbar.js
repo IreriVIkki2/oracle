@@ -11,7 +11,7 @@ const Toolbar = ({ showSidebar }) => {
     useEffect(() => {
         window.addEventListener("scroll", e => {
             // setHeight(Math.floor(window.scrollY * 0.14));
-            let num = Math.floor(window.scrollY * 0.18);
+            let num = Math.floor(window.scrollY * 0.3);
             if (num < 10) {
                 setHeight(`#0000000${num}`);
             } else if (num > 100) {
@@ -32,29 +32,29 @@ const Toolbar = ({ showSidebar }) => {
             </div>
             <nav className={css.Nav}>
                 <ul className={css.NavItems}>
-                    <li>
+                    <li className={css.LinkItem}>
                         <Link href="/about">
-                            <p className="">ABOUT</p>
+                            <p className={main.TextGold}>ABOUT</p>
                         </Link>
                     </li>
-                    <li>
+                    <li className={css.LinkItem}>
                         <Link href="/events">
-                            <p className="">EVENTS</p>
+                            <p className={main.TextGold}>EVENTS</p>
                         </Link>
                     </li>
-                    <li>
+                    <li className={css.LinkItem}>
                         <Link href="/books">
-                            <p className="">BOOKS</p>
+                            <p className={main.TextGold}>BOOKS</p>
                         </Link>
                     </li>
-                    <li>
+                    <li className={css.LinkItem}>
                         <Link href="/blog">
-                            <p className="">BLOG</p>
+                            <p className={main.TextGold}>BLOG</p>
                         </Link>
                     </li>
-                    <li>
+                    <li className={css.LinkItem}>
                         <Link href="/support">
-                            <p className="">SUPPORT</p>
+                            <p className={main.TextGold}>SUPPORT</p>
                         </Link>
                     </li>
                 </ul>

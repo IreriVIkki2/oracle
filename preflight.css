@@ -6,6 +6,7 @@
     text-rendering: optimizeSpeed;
     box-sizing: border-box;
     font-family: "Raleway", sans-serif;
+    font-weight: lighter !important;
 }
 
 body,
@@ -13,6 +14,9 @@ html {
     padding: 0;
     margin: 0;
     height: 100%;
+    /* background-color: #000000d0;
+    z-index: -10;
+    color: #fffffff0; */
 }
 
 *,

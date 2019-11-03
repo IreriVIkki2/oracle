@@ -28,7 +28,7 @@ const AdminBar = () => {
     return (
         <div
             className="bg-dark py-1 px-3 position-fixed top-0 w-100"
-            style={{ height: "40px" }}
+            style={{ height: "40px", zIndex: "900" }}
         >
             <div className="d-flex align-items-center">
                 <button

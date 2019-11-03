@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from "react";
-import { updateElement } from "../../../../utils/firebaseMethods/updateElements";
-import { HomeContext } from "../../../context/data/HomeContext";
+import updateElement from "../../../../../utils/firebaseMethods/updateElement";
+import config from "../../../../../config/config";
 import Axios from "axios";
-import config from "../../../../config";
+import { HomeContext } from "../../../../Context/HomeContext";
 
 const ImageForm = ({ doc, collection, label, value, path }) => {
     const [saving, setSaving] = useState(false);
@@ -18,9 +18,9 @@ const ImageForm = ({ doc, collection, label, value, path }) => {
         if (file) {
             setSaving(true);
             const fd = new FormData();
-            fd.append("home-header-backgroundImage", file);
+            fd.append(`${collection}-${doc}-${path}`, file);
             Axios.post(
-                `https://us-central1-functions-c9cb3.cloudfunctions.net/uploadFile?bucketName=${config.bucketName}`,
+                `https://us-central1-nate-a76c4.cloudfunctions.net/uploadFile?bucketName=${config.bucketName}`,
                 fd,
                 {
                     headers: {
@@ -61,27 +61,32 @@ const ImageForm = ({ doc, collection, label, value, path }) => {
     };
 
     return (
-        <div className="d-flex">
-            <div className="w-25 mr-2">
-                <img
-                    className="img-fluid"
-                    src={saving ? "/public/uploading.gif" : newImage}
-                    alt=""
-                />
-            </div>
-            <div className="form-group">
-                <label htmlFor="file">{label}</label>
-
+        <div className="mx-0 row">
+            <label className="h5" htmlFor={path}>
+                change {label}
+            </label>
+            <div className="custom-file col-sm-6 p-0 pr-2">
                 <input
                     type="file"
-                    className="form-control"
-                    id="file"
+                    className="custom-file-input"
+                    id={path}
+                    name={label}
                     multiple={false}
                     onChange={handleFileChange}
                 />
+                <label className="custom-file-label" htmlFor={path}>
+                    {label}
+                </label>
                 <small id="emailHelp" className="form-text text-muted">
                     {saving ? "saving changes" : "changes saved"}
                 </small>
+            </div>
+            <div className="col-sm-6 pt-4" style={{ height: "100px" }}>
+                <img
+                    className="img-fluid h-100"
+                    src={saving ? "/public/uploading.gif" : newImage}
+                    alt=""
+                />
             </div>
         </div>
     );

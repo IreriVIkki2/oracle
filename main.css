@@ -2,12 +2,33 @@
     font-family: "La Belle Aurore", "Raleway", sans-serif !important;
 }
 
+.Bubler {
+    font-family: "Times New Roman", Times, serif !important;
+    font-style: italic;
+}
+
 .TextGold {
     color: #b28d3d;
 }
 
 .BgGold {
     background-color: #b28d3d;
+}
+
+.TextPastelCream {
+    color: #fdebd3;
+}
+
+.BgPastelCream {
+    background-color: #fdebd3;
+}
+
+.TextPastelBlue {
+    color: #d7e6f5;
+}
+
+.BgPastelBlue {
+    background-color: #d7e6f5;
 }
 
 /* On screens that are 600px or less, set the background color to olive */
